@@ -610,6 +610,16 @@ class Laminate:
         return abd_mat
 
     def is_lam_symmetric(self):
+        """Test to determine if a laminate is symmetric.
+
+        Returns
+        -------
+        b_test : float
+            The ratio of the Lp,q norms of the B matrix w/r/t the Lp,q norm of the ABD matrix
+        b_inv_test : float
+            The ratio of the Lp,q norms of the b matrix w/r/t the Lp,q norm of the abd matrix
+
+        """
         # Return the Lp,q norm of the ABD matrix for testing
         lpq_norm_abd = np.sqrt(np.sum(np.square(self.abd)))
         # Return the abd matrix (not to be confused with ABD)
